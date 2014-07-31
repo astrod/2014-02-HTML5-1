@@ -556,6 +556,18 @@ hr {
 	transition-duration: 500ms;
 }
 
+.original {
+	opacity:  0;
+	-webkit-transition-property:opacity; 
+   	-webkit-transition-duration:1s;
+	transition-property:opacity; 
+   	transition-duration:1s;
+}
+
+.deleteOrginal {
+	opacity : 0;
+}
+
 @media (min-width: 899px) {
 	.learn-bar {
 		width: auto;

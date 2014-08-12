@@ -63,12 +63,21 @@
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
         
-        	<script id= "viewString" type="templeteString">
-		<li class="original">
+        	<script id= "viewStringOriginal" type="templeteString">
+		<li class="original" data-key=<%= key %>>
 			<div class="view">
-				<input class="toggle" type="checkbox">
+				<input class="close" type="checkbox">
 				<label><%= text %></label>
-				<button class="destroy"></button>
+				<button class="remove"></button>
+			</div>
+		</li>
+            </script>
+            	<script id= "viewStringCompleted" type="templeteString">
+		<li class="completed" data-key=<%= key %>>
+			<div class="view">
+				<input class="close" type="checkbox" checked>
+				<label><%= text %></label>
+				<button class="remove"></button>
 			</div>
 		</li>
             </script>

@@ -108,9 +108,9 @@ var TODO = {
 		}.bind(this));
 		this.todoListElement().insertAdjacentHTML('afterBegin', totalString);
 		var changeList = this.todoListElement().getElementsByTagName("li");
-		for(var i =0; i<changeList.length; i++) {
-			this.changeOpacity(changeList[i], "up");
-		}
+		var todoliChangedOpacity = document.querySelector("#todo-list");
+		todoliChangedOpacity.offsetHeight;
+		todoliChangedOpacity.classList.add("ani");
 	},
 	eventHandlerList : function() {
 		document.getElementById("new-todo").addEventListener("keydown", this.addTODO.bind(this));
@@ -145,7 +145,7 @@ var TODO = {
 		e.preventDefault();
 	},
 	allView : function() {
-		this.todoListElement().className = "";
+		this.todoListElement().className = "ani";
 		this.selectedNavigator(0);
 	},
 	activeView : function() {
@@ -171,11 +171,11 @@ var TODO = {
 			             this.todoListElement().insertAdjacentHTML('afterBegin', todoli);  
 			            
 			             var changeli = document.querySelector(".original");
+			             changeli.style.opacity = 0;
 			             changeli.dataset.key = json.insertId;
 				this.changeOpacity(changeli, "up");
 			             document.getElementById("new-todo").value = "";
 			}.bind(this));
-	
 	        	}
 	} ,
 	//애니메이션을 위해, opacity를 변경하고자 하는 div를 인자로 받아서 그 값이 1이면 0으로, 0이면 1로 변경한다.
